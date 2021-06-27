@@ -125,6 +125,29 @@ namespace ORUSCURSO.Logica
                 CONEXIONMAESTRA.cerrar();
             }
         }
+        public bool restaurarPersonal(Lpersonal parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("restaurarPersonal", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Idpersonal", parametros.Id_personal);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+
 
     }
 }
