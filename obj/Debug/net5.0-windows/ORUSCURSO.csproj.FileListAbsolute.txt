@@ -45,3 +45,4 @@ C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\net5.0-window
 C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\net5.0-windows\ref\ORUSCURSO.dll
 C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\net5.0-windows\ORUSCURSO.pdb
 C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\net5.0-windows\ORUSCURSO.genruntimeconfig.cache
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\net5.0-windows\ORUSCURSO.csproj.AssemblyReference.cache
