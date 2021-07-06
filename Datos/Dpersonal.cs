@@ -146,7 +146,23 @@ namespace ORUSCURSO.Logica
                 CONEXIONMAESTRA.cerrar();
             }
         }
-
+        public void contarPersonal(ref int contador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("select COUNT(Id_personal) from Personal",CONEXIONMAESTRA.conectar);
+                contador = Convert.ToInt32( cmd.ExecuteScalar());
+            }
+            catch (Exception)
+            {
+                contador = 0;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
 
     }

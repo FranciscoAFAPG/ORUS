@@ -92,9 +92,9 @@ namespace ORUSCURSO.Presentacion
             parametros.SueldoPorHora = Convert.ToDouble(txtSueldoPorHora.Text);
             if (funcion.insertarPersonal(parametros) == true)
             {
+                reiniciarPaginado();
                 MostrarPersonal();
                 PanelRegistros.Visible = false;
-
             }
 
         }
@@ -228,6 +228,7 @@ namespace ORUSCURSO.Presentacion
         private void btnVolverPersonal_Click(object sender, EventArgs e)
         {
             PanelRegistros.Visible = false;
+            PanelPaginado.Visible = true;
         }
 
         private void btnGuardarCambiosC_Click(object sender, EventArgs e)
@@ -252,9 +253,30 @@ namespace ORUSCURSO.Presentacion
 
         private void Personal_Load(object sender, EventArgs e)
         {
+            reiniciarPaginado();
             MostrarPersonal();
         }
-
+        private void reiniciarPaginado()
+        {
+            desde = 1;
+            hasta = 10;
+            Contar();
+            if (contador > hasta)
+            {
+                btn_sig.Visible = true;
+                btn_ant.Visible = false;
+                btn_ultima.Visible = true;
+                btn_primera.Visible = true;
+            }
+            else
+            {
+                btn_sig.Visible = false;
+                btn_ant.Visible = false;
+                btn_ultima.Visible = false;
+                btn_primera.Visible = false;
+            }
+            Paginar();
+        }
         private void dataListadoPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == dataListadoPersonal.Columns["Eliminar"].Index)
@@ -280,6 +302,7 @@ namespace ORUSCURSO.Presentacion
             }
             else
             {
+                LocalizarDtvCargos();
                 txtNombres.Text = dataListadoPersonal.SelectedCells[3].Value.ToString();
                 txtIdentificacion.Text = dataListadoPersonal.SelectedCells[4].Value.ToString();
                 cbxPais.Text = dataListadoPersonal.SelectedCells[10].Value.ToString();
@@ -337,6 +360,136 @@ namespace ORUSCURSO.Presentacion
         private void dataListadoPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void BtnGuardarCambiosPersonal_Click(object sender, EventArgs e)
+        {
+            EditarPersonal();
+        }
+        private void EditarPersonal()
+        {
+            Lpersonal parametros = new Lpersonal();
+            Dpersonal funcion = new Dpersonal();
+            parametros.Id_personal = Idpersonal;
+            parametros.Nombres = txtNombres.Text;
+            parametros.Identificacion = txtIdentificacion.Text;
+            parametros.Pais = cbxPais.Text;
+            parametros.Id_cargo = IdCargo;
+            parametros.SueldoPorHora = Convert.ToDouble(txtSueldoPorHora.Text);
+            if (funcion.editarPersonal(parametros) == true)
+            {
+                MostrarPersonal();
+                PanelRegistros.Visible = false;
+            }
+
+        }
+
+        private void btn_sig_Click(object sender, EventArgs e)
+        {
+            desde += 10;
+            hasta += 10;
+            MostrarPersonal();
+            Contar();
+            if(contador > hasta)
+            {
+                btn_sig.Visible = true;
+                btn_ant.Visible = true;
+            }
+            else
+            {
+                btn_sig.Visible = false;
+                btn_ant.Visible = true;
+            }
+            Paginar();
+        }
+        private void Paginar()
+        {
+            try
+            {
+                lbl_pagina.Text = (hasta / 10).ToString();
+                lbl_totalPaginas.Text = Math.Ceiling(Convert.ToSingle(contador)/items_por_pagina).ToString();
+                totalpaginas = Convert.ToInt32(lbl_totalPaginas.Text);
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+        private void Contar()
+        {
+            Dpersonal funcion = new Dpersonal();
+            funcion.contarPersonal(ref contador);
+        }
+
+        private void btn_ant_Click(object sender, EventArgs e)
+        {
+            desde -= 10;
+            hasta -= 10;
+            MostrarPersonal();
+            Contar();
+            if (contador > hasta)
+            {
+                btn_sig.Visible = true;
+                btn_ant.Visible = true;
+            }
+            else
+            {
+                btn_sig.Visible = false;
+                btn_ant.Visible = true;
+            }
+            if(desde == 1)
+            {
+                reiniciarPaginado();
+            }
+            Paginar();
+        }
+
+        private void btn_ultima_Click(object sender, EventArgs e)
+        {
+            hasta = totalpaginas * items_por_pagina;
+            desde = hasta - 9;
+            MostrarPersonal();
+            Contar();
+            if (contador > hasta)
+            {
+                btn_sig.Visible = true;
+                btn_ant.Visible = true;
+            }
+            else
+            {
+                btn_sig.Visible = false;
+                btn_ant.Visible = true;
+            }
+            if (desde == 1)
+            {
+                reiniciarPaginado();
+            }
+            Paginar();
+        }
+
+        private void btn_primera_Click(object sender, EventArgs e)
+        {
+            reiniciarPaginado();
+            MostrarPersonal();
+        }
+
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+            BuscarPersonal();
+        }
+        private void BuscarPersonal()
+        {
+            DataTable dt = new DataTable();
+            Dpersonal funcion = new Dpersonal();
+            funcion.buscarPersonal(ref dt, desde, hasta, txtBuscador.Text);
+            dataListadoPersonal.DataSource = dt;
+            DiseñarDataGridViewPersonal();
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            reiniciarPaginado();
+            MostrarPersonal();
+            txtBuscador.Clear();
         }
     }
 }

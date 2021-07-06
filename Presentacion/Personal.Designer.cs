@@ -36,20 +36,24 @@ namespace ORUSCURSO.Presentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscador = new System.Windows.Forms.TextBox();
             this.dataListadoPersonal = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelPaginado = new System.Windows.Forms.Panel();
             this.btn_primera = new System.Windows.Forms.Button();
             this.btn_ultima = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_totalPaginas = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_pagina = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_ant = new System.Windows.Forms.Button();
@@ -89,6 +93,7 @@ namespace ORUSCURSO.Presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoPersonal)).BeginInit();
             this.PanelPaginado.SuspendLayout();
@@ -103,29 +108,28 @@ namespace ORUSCURSO.Presentacion
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.BtnAgregar);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnMostrarTodos);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBuscador);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1163, 71);
             this.panel1.TabIndex = 0;
             // 
-            // button6
+            // panel2
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(377, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(154, 28);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Mostrar todos";
-            this.button6.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.BtnAgregar);
+            this.panel2.Controls.Add(this.panel12);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1058, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(105, 71);
+            this.panel2.TabIndex = 20;
             // 
             // BtnAgregar
             // 
@@ -135,13 +139,50 @@ namespace ORUSCURSO.Presentacion
             this.BtnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BtnAgregar.FlatAppearance.BorderSize = 0;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregar.Image")));
-            this.BtnAgregar.Location = new System.Drawing.Point(1085, 0);
+            this.BtnAgregar.Location = new System.Drawing.Point(42, 5);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(78, 71);
+            this.BtnAgregar.Size = new System.Drawing.Size(53, 61);
             this.BtnAgregar.TabIndex = 3;
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel12.Location = new System.Drawing.Point(95, 5);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 61);
+            this.panel12.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 66);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(105, 5);
+            this.panel7.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(105, 5);
+            this.panel4.TabIndex = 4;
+            // 
+            // btnMostrarTodos
+            // 
+            this.btnMostrarTodos.FlatAppearance.BorderSize = 0;
+            this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarTodos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMostrarTodos.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarTodos.Location = new System.Drawing.Point(377, 19);
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(154, 28);
+            this.btnMostrarTodos.TabIndex = 19;
+            this.btnMostrarTodos.Text = "Mostrar todos";
+            this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox1
             // 
@@ -161,16 +202,17 @@ namespace ORUSCURSO.Presentacion
             this.panel3.Size = new System.Drawing.Size(295, 2);
             this.panel3.TabIndex = 1;
             // 
-            // textBox1
+            // txtBuscador
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(19, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 22);
-            this.textBox1.TabIndex = 0;
+            this.txtBuscador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.txtBuscador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscador.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBuscador.ForeColor = System.Drawing.Color.White;
+            this.txtBuscador.Location = new System.Drawing.Point(19, 18);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(295, 22);
+            this.txtBuscador.TabIndex = 0;
+            this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
             // 
             // dataListadoPersonal
             // 
@@ -236,9 +278,9 @@ namespace ORUSCURSO.Presentacion
             this.PanelPaginado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.PanelPaginado.Controls.Add(this.btn_primera);
             this.PanelPaginado.Controls.Add(this.btn_ultima);
-            this.PanelPaginado.Controls.Add(this.label9);
+            this.PanelPaginado.Controls.Add(this.lbl_totalPaginas);
             this.PanelPaginado.Controls.Add(this.label8);
-            this.PanelPaginado.Controls.Add(this.label5);
+            this.PanelPaginado.Controls.Add(this.lbl_pagina);
             this.PanelPaginado.Controls.Add(this.label4);
             this.PanelPaginado.Controls.Add(this.flowLayoutPanel2);
             this.PanelPaginado.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -252,38 +294,40 @@ namespace ORUSCURSO.Presentacion
             this.btn_primera.BackColor = System.Drawing.Color.DarkGray;
             this.btn_primera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_primera.FlatAppearance.BorderSize = 0;
-            this.btn_primera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_primera.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_primera.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_primera.Location = new System.Drawing.Point(566, 21);
+            this.btn_primera.Location = new System.Drawing.Point(458, 21);
             this.btn_primera.Name = "btn_primera";
             this.btn_primera.Size = new System.Drawing.Size(120, 37);
             this.btn_primera.TabIndex = 8;
             this.btn_primera.Text = "Pimera Pagina";
             this.btn_primera.UseVisualStyleBackColor = false;
+            this.btn_primera.Click += new System.EventHandler(this.btn_primera_Click);
             // 
             // btn_ultima
             // 
             this.btn_ultima.BackColor = System.Drawing.Color.DarkGray;
             this.btn_ultima.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_ultima.FlatAppearance.BorderSize = 0;
-            this.btn_ultima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ultima.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_ultima.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_ultima.Location = new System.Drawing.Point(428, 21);
+            this.btn_ultima.Location = new System.Drawing.Point(584, 21);
             this.btn_ultima.Name = "btn_ultima";
             this.btn_ultima.Size = new System.Drawing.Size(120, 37);
             this.btn_ultima.TabIndex = 7;
             this.btn_ultima.Text = "Ultima Pagina";
             this.btn_ultima.UseVisualStyleBackColor = false;
+            this.btn_ultima.Click += new System.EventHandler(this.btn_ultima_Click);
             // 
-            // label9
+            // lbl_totalPaginas
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(397, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 15);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "0";
+            this.lbl_totalPaginas.AutoSize = true;
+            this.lbl_totalPaginas.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalPaginas.Location = new System.Drawing.Point(397, 43);
+            this.lbl_totalPaginas.Name = "lbl_totalPaginas";
+            this.lbl_totalPaginas.Size = new System.Drawing.Size(13, 15);
+            this.lbl_totalPaginas.TabIndex = 16;
+            this.lbl_totalPaginas.Text = "0";
             // 
             // label8
             // 
@@ -295,15 +339,15 @@ namespace ORUSCURSO.Presentacion
             this.label8.TabIndex = 5;
             this.label8.Text = "de";
             // 
-            // label5
+            // lbl_pagina
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(352, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "0";
+            this.lbl_pagina.AutoSize = true;
+            this.lbl_pagina.ForeColor = System.Drawing.Color.White;
+            this.lbl_pagina.Location = new System.Drawing.Point(352, 43);
+            this.lbl_pagina.Name = "lbl_pagina";
+            this.lbl_pagina.Size = new System.Drawing.Size(13, 15);
+            this.lbl_pagina.TabIndex = 14;
+            this.lbl_pagina.Text = "0";
             // 
             // label4
             // 
@@ -326,17 +370,20 @@ namespace ORUSCURSO.Presentacion
             // 
             // btn_ant
             // 
+            this.btn_ant.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
             this.btn_ant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ant.BackgroundImage")));
             this.btn_ant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_ant.FlatAppearance.BorderSize = 0;
             this.btn_ant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_ant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ant.ForeColor = System.Drawing.Color.Black;
             this.btn_ant.Location = new System.Drawing.Point(3, 3);
             this.btn_ant.Name = "btn_ant";
             this.btn_ant.Size = new System.Drawing.Size(120, 37);
             this.btn_ant.TabIndex = 0;
             this.btn_ant.UseVisualStyleBackColor = false;
+            this.btn_ant.Click += new System.EventHandler(this.btn_ant_Click);
             // 
             // btn_sig
             // 
@@ -345,11 +392,14 @@ namespace ORUSCURSO.Presentacion
             this.btn_sig.FlatAppearance.BorderSize = 0;
             this.btn_sig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_sig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_sig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sig.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_sig.Location = new System.Drawing.Point(129, 3);
             this.btn_sig.Name = "btn_sig";
             this.btn_sig.Size = new System.Drawing.Size(120, 37);
             this.btn_sig.TabIndex = 1;
             this.btn_sig.UseVisualStyleBackColor = false;
+            this.btn_sig.Click += new System.EventHandler(this.btn_sig_Click);
             // 
             // PanelRegistros
             // 
@@ -612,6 +662,7 @@ namespace ORUSCURSO.Presentacion
             this.BtnGuardarCambiosPersonal.TabIndex = 4;
             this.BtnGuardarCambiosPersonal.Text = "Guardar *";
             this.BtnGuardarCambiosPersonal.UseVisualStyleBackColor = true;
+            this.BtnGuardarCambiosPersonal.Click += new System.EventHandler(this.BtnGuardarCambiosPersonal_Click);
             // 
             // BtnAgregarCargo
             // 
@@ -866,6 +917,7 @@ namespace ORUSCURSO.Presentacion
             this.Load += new System.EventHandler(this.Personal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoPersonal)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
@@ -889,7 +941,7 @@ namespace ORUSCURSO.Presentacion
         private System.Windows.Forms.Panel PanelPaginado;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.Panel PanelRegistros;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
@@ -911,12 +963,12 @@ namespace ORUSCURSO.Presentacion
         private System.Windows.Forms.Button BtnGuardarPersonal;
         private System.Windows.Forms.Button btnVolverPersonal;
         private System.Windows.Forms.Button BtnGuardarCambiosPersonal;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.Button btn_primera;
         private System.Windows.Forms.Button btn_ultima;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_totalPaginas;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_pagina;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button btn_ant;
@@ -937,5 +989,9 @@ namespace ORUSCURSO.Presentacion
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn EditarC;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel4;
     }
 }
