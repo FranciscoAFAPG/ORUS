@@ -168,7 +168,7 @@ namespace ORUSCURSO.Presentacion
             // iones
             // 
             this.iones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.iones.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iones.BackgroundImage")));
+            this.iones.BackgroundImage = global::ORUSCURSO.Properties.Resources.naranja;
             this.iones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.iones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iones.FlatAppearance.BorderSize = 0;
@@ -224,7 +224,6 @@ namespace ORUSCURSO.Presentacion
             // btnRespaldo
             // 
             this.btnRespaldo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.btnRespaldo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRespaldo.BackgroundImage")));
             this.btnRespaldo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRespaldo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRespaldo.FlatAppearance.BorderSize = 0;
@@ -280,7 +279,6 @@ namespace ORUSCURSO.Presentacion
             // btnRestaurar
             // 
             this.btnRestaurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.btnRestaurar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.BackgroundImage")));
             this.btnRestaurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
@@ -336,7 +334,6 @@ namespace ORUSCURSO.Presentacion
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.btnUsuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.BackgroundImage")));
             this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
@@ -352,6 +349,7 @@ namespace ORUSCURSO.Presentacion
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // panel27
             // 
@@ -392,7 +390,6 @@ namespace ORUSCURSO.Presentacion
             // btnRegistro
             // 
             this.btnRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
             this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRegistro.FlatAppearance.BorderSize = 0;

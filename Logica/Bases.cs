@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Globalization;
+using ORUSCURSO.Presentacion;
 
 namespace ORUSCURSO.Logica
 {
@@ -72,6 +74,64 @@ namespace ORUSCURSO.Logica
                 e.Handled = true;
             }
             return null;
+        }
+       public enum DateInterval
+        {
+            Day,
+            DayOfYear,
+            Hour,
+            Minute,
+            Month,
+            Quarter,
+            Second,
+            Weekday,
+            WeekOfYear,
+            Year
+        }
+        public static long DateDiff(DateInterval intervalType, DateTime dateone, DateTime datetwo)
+        {
+            switch (intervalType)
+            {
+                case DateInterval.Day:
+                case DateInterval.DayOfYear:
+                    TimeSpan spanForDays = datetwo - dateone;
+                    return (long)spanForDays.TotalDays;
+                case DateInterval.Hour:
+                    TimeSpan spanForHours = datetwo - dateone;
+                    return (long)spanForHours.TotalHours;
+                case DateInterval.Minute:
+                    TimeSpan spanForMinutes = datetwo - dateone;
+                    return (long)spanForMinutes.TotalMinutes;
+                case DateInterval.Month:
+                    return ((datetwo.Year - dateone.Year) * 12) + (datetwo.Month-dateone.Month);
+                case DateInterval.Quarter:
+                    long dateOneQuarter = (long)Math.Ceiling(dateone.Month / 3.0);
+                    long dateTwoQuarter = (long)Math.Ceiling(datetwo.Month / 3.0);
+                    return (4 * (datetwo.Year - dateone.Year)) + dateTwoQuarter - dateOneQuarter;
+                case DateInterval.Second:
+                    TimeSpan spanForSeconds = datetwo - dateone;
+                    return (long)spanForSeconds.TotalSeconds;
+                case DateInterval.Weekday:
+                    TimeSpan spanForWeekdays = datetwo - dateone;
+                    return (long)(spanForWeekdays.TotalDays / 7.0);
+                case DateInterval.WeekOfYear:
+                    DateTime dateOneModified = dateone;
+                    DateTime dateTwoModified = datetwo;
+                    while (dateTwoModified.DayOfWeek != DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                    {
+                        dateTwoModified = dateTwoModified.AddDays(-1);
+                    }
+                    while (dateOneModified.DayOfWeek != DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                    {
+                        dateOneModified = dateOneModified.AddDays(-1);
+                    }
+                    TimeSpan spanForWeekOfYear = dateTwoModified - dateOneModified;
+                    return (long)(spanForWeekOfYear.TotalDays / 7.0);
+                case DateInterval.Year:
+                    return datetwo.Year - dateone.Year;
+                default:
+                    return 0;
+            }
         }
     }
 }

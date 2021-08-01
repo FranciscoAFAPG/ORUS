@@ -37,7 +37,7 @@ namespace ORUSCURSO.Presentacion
             this.BtnIniciarSesion = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.Label();
             this.txtAviso = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -49,9 +49,9 @@ namespace ORUSCURSO.Presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panelObservacion = new System.Windows.Forms.Panel();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtObservacion = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -59,7 +59,7 @@ namespace ORUSCURSO.Presentacion
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel8.SuspendLayout();
+            this.panelObservacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,7 +127,7 @@ namespace ORUSCURSO.Presentacion
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.txtNombre);
             this.panel6.Controls.Add(this.txtAviso);
             this.panel6.Controls.Add(this.lblHora);
             this.panel6.Controls.Add(this.lblFecha);
@@ -143,16 +143,16 @@ namespace ORUSCURSO.Presentacion
             this.panel6.Size = new System.Drawing.Size(483, 375);
             this.panel6.TabIndex = 2;
             // 
-            // label6
+            // txtNombre
             // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(65, 226);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(349, 23);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "***";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtNombre.Location = new System.Drawing.Point(65, 226);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(349, 23);
+            this.txtNombre.TabIndex = 21;
+            this.txtNombre.Text = "***";
+            this.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAviso
             // 
@@ -227,6 +227,7 @@ namespace ORUSCURSO.Presentacion
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(278, 22);
             this.txtIdentificacion.TabIndex = 14;
+            this.txtIdentificacion.TextChanged += new System.EventHandler(this.txtIdentificacion_TextChanged);
             // 
             // label3
             // 
@@ -272,41 +273,43 @@ namespace ORUSCURSO.Presentacion
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // panel8
+            // panelObservacion
             // 
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Controls.Add(this.richTextBox1);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(30, 105);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(236, 510);
-            this.panel8.TabIndex = 4;
+            this.panelObservacion.Controls.Add(this.btnConfirmar);
+            this.panelObservacion.Controls.Add(this.txtObservacion);
+            this.panelObservacion.Controls.Add(this.label7);
+            this.panelObservacion.Location = new System.Drawing.Point(30, 105);
+            this.panelObservacion.Name = "panelObservacion";
+            this.panelObservacion.Size = new System.Drawing.Size(236, 510);
+            this.panelObservacion.TabIndex = 4;
+            this.panelObservacion.Visible = false;
             // 
-            // button1
+            // btnConfirmar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button1.BackgroundImage = global::ORUSCURSO.Properties.Resources.azul;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 245);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnConfirmar.BackgroundImage = global::ORUSCURSO.Properties.Resources.azul;
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.Location = new System.Drawing.Point(3, 245);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(155, 42);
+            this.btnConfirmar.TabIndex = 5;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // richTextBox1
+            // txtObservacion
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.richTextBox1.Location = new System.Drawing.Point(3, 60);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(230, 182);
-            this.richTextBox1.TabIndex = 463;
-            this.richTextBox1.Text = "";
+            this.txtObservacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.txtObservacion.Location = new System.Drawing.Point(3, 60);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(230, 182);
+            this.txtObservacion.TabIndex = 463;
+            this.txtObservacion.Text = "";
             // 
             // label7
             // 
@@ -322,6 +325,7 @@ namespace ORUSCURSO.Presentacion
             // timerHora
             // 
             this.timerHora.Enabled = true;
+            this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
             // TomarAsistencias
             // 
@@ -329,7 +333,7 @@ namespace ORUSCURSO.Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1160, 700);
-            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panelObservacion);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Name = "TomarAsistencias";
@@ -343,7 +347,7 @@ namespace ORUSCURSO.Presentacion
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel8.ResumeLayout(false);
+            this.panelObservacion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,7 +362,7 @@ namespace ORUSCURSO.Presentacion
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txtNombre;
         private System.Windows.Forms.Label txtAviso;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
@@ -369,9 +373,9 @@ namespace ORUSCURSO.Presentacion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Panel panelObservacion;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.RichTextBox txtObservacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer timerHora;
     }
