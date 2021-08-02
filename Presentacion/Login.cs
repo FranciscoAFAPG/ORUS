@@ -1,4 +1,5 @@
 ﻿using ORUSCURSO.Datos;
+using ORUSCURSO.Logica;
 using ORUSCURSO.Presentacion.AsistenteInstalacion;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,7 @@ namespace ORUSCURSO.Presentacion
                     b.Text = rdr["Login"].ToString();
                     b.Name = rdr["IdUsuario"].ToString();
                     b.Size = new Size(175, 25);
-                    b.Font = new Font("Microsoft Scan Serif", 13);
+                    b.Font = new Font("Microsoft Sans Serif", 13);
                     b.BackColor = Color.Transparent;
                     b.ForeColor = Color.White;
                     b.Dock = DockStyle.Bottom;
@@ -90,12 +91,130 @@ namespace ORUSCURSO.Presentacion
                     p1.Controls.Add(I1);
                     b.BringToFront();
 
-                    flowLayoutPanel1.Controls.Add(p1);
+                    flowLayoutPanel2.Controls.Add(p1);
 
+                    b.Click +=  eventoLabel;
+                    I1.Click += eventoImagen;
                 }
             }catch (Exception)
             {
 
+            }
+        }
+        private void eventoImagen(object sender, EventArgs e)
+        {
+            Usuario = Convert.ToString(((PictureBox)sender).Tag);
+            MostrarPanelPass();
+        }
+        private void eventoLabel(object sender, EventArgs e)
+        {
+            Usuario = ((Label)sender).Text;
+            MostrarPanelPass();
+        }
+        private void MostrarPanelPass()
+        {
+            panelIngresoContraseña.Visible = true;
+            panelIngresoContraseña.Location = new Point((Width - panelIngresoContraseña.Width) / 2, (Height - panelIngresoContraseña.Height) / 2);
+            PanelUsuarios.Visible = false;
+        }
+
+        private void txtcontraseña_TextChanged(object sender, EventArgs e)
+        {
+            validarUsuario();
+        }
+        private void validarUsuario()
+        {
+            Lusuarios parametros = new Lusuarios();
+            Dusuarios funcion = new Dusuarios();
+            parametros.Password = txtcontraseña.Text;
+            parametros.Login = Usuario;
+            funcion.validarUsuario(parametros, ref IdUsuario);
+            if (IdUsuario > 0)
+            {
+                Dispose();
+                MenuPrincipal frm = new MenuPrincipal();
+                frm.ShowDialog();
+
+            }
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Contraseña erronea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "1";
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "2";
+
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "3";
+
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "4";
+
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "5";
+
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "6";
+
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "7";
+
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "8";
+
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "9";
+
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Text += "0";
+
+        }
+
+        private void btnborrar_Click(object sender, EventArgs e)
+        {
+            txtcontraseña.Clear();
+        }
+
+        private void btnborrarletra_Click(object sender, EventArgs e)
+        {
+            int contador;
+            contador = txtcontraseña.Text.Count();
+            if (contador > 0)
+            {
+                txtcontraseña.Text = txtcontraseña.Text.Substring(0,txtcontraseña.Text.Count()-1);
             }
         }
     }

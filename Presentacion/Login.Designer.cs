@@ -31,12 +31,8 @@ namespace ORUSCURSO.Presentacion
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.BtnIniciarSesion = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelIngresoContraseña = new System.Windows.Forms.Panel();
             this.btnCambioUsuario = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnborrarletra = new System.Windows.Forms.Button();
@@ -53,16 +49,15 @@ namespace ORUSCURSO.Presentacion
             this.btn8 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtcontraseña = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelUsuarios = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelIngresoContraseña.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.PanelUsuarios.SuspendLayout();
@@ -71,14 +66,11 @@ namespace ORUSCURSO.Presentacion
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1011, 57);
+            this.panel1.Size = new System.Drawing.Size(1017, 57);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -92,13 +84,6 @@ namespace ORUSCURSO.Presentacion
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(1011, -2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(149, 5);
-            this.panel2.TabIndex = 6;
-            // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -111,52 +96,20 @@ namespace ORUSCURSO.Presentacion
             this.label2.Text = "Orus369";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
+            // panelIngresoContraseña
             // 
-            this.panel3.Controls.Add(this.BtnIniciarSesion);
-            this.panel3.Location = new System.Drawing.Point(1011, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(146, 45);
-            this.panel3.TabIndex = 7;
-            // 
-            // BtnIniciarSesion
-            // 
-            this.BtnIniciarSesion.BackgroundImage = global::ORUSCURSO.Properties.Resources.naranja;
-            this.BtnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIniciarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnIniciarSesion.FlatAppearance.BorderSize = 0;
-            this.BtnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIniciarSesion.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnIniciarSesion.ForeColor = System.Drawing.Color.Black;
-            this.BtnIniciarSesion.Location = new System.Drawing.Point(0, 0);
-            this.BtnIniciarSesion.Name = "BtnIniciarSesion";
-            this.BtnIniciarSesion.Size = new System.Drawing.Size(146, 45);
-            this.BtnIniciarSesion.TabIndex = 20;
-            this.BtnIniciarSesion.Text = "Iniciar Sesion";
-            this.BtnIniciarSesion.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1006, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 57);
-            this.panel4.TabIndex = 8;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnCambioUsuario);
-            this.panel5.Controls.Add(this.btnInsertar);
-            this.panel5.Controls.Add(this.btnborrarletra);
-            this.panel5.Controls.Add(this.btn0);
-            this.panel5.Controls.Add(this.btnborrar);
-            this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(98, 124);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(329, 497);
-            this.panel5.TabIndex = 2;
+            this.panelIngresoContraseña.Controls.Add(this.btnCambioUsuario);
+            this.panelIngresoContraseña.Controls.Add(this.btnInsertar);
+            this.panelIngresoContraseña.Controls.Add(this.btnborrarletra);
+            this.panelIngresoContraseña.Controls.Add(this.btn0);
+            this.panelIngresoContraseña.Controls.Add(this.btnborrar);
+            this.panelIngresoContraseña.Controls.Add(this.flowLayoutPanel1);
+            this.panelIngresoContraseña.Controls.Add(this.panel6);
+            this.panelIngresoContraseña.Controls.Add(this.label1);
+            this.panelIngresoContraseña.Location = new System.Drawing.Point(98, 124);
+            this.panelIngresoContraseña.Name = "panelIngresoContraseña";
+            this.panelIngresoContraseña.Size = new System.Drawing.Size(329, 497);
+            this.panelIngresoContraseña.TabIndex = 2;
             // 
             // btnCambioUsuario
             // 
@@ -183,6 +136,7 @@ namespace ORUSCURSO.Presentacion
             this.btnInsertar.TabIndex = 6;
             this.btnInsertar.Text = "Iniciar sesion";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnborrarletra
             // 
@@ -199,6 +153,7 @@ namespace ORUSCURSO.Presentacion
             this.btnborrarletra.TabIndex = 5;
             this.btnborrarletra.Text = "<--";
             this.btnborrarletra.UseVisualStyleBackColor = false;
+            this.btnborrarletra.Click += new System.EventHandler(this.btnborrarletra_Click);
             // 
             // btn0
             // 
@@ -215,6 +170,7 @@ namespace ORUSCURSO.Presentacion
             this.btn0.TabIndex = 4;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btnborrar
             // 
@@ -231,6 +187,7 @@ namespace ORUSCURSO.Presentacion
             this.btnborrar.TabIndex = 3;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = false;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -263,6 +220,7 @@ namespace ORUSCURSO.Presentacion
             this.btn1.TabIndex = 0;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btn2
             // 
@@ -279,6 +237,7 @@ namespace ORUSCURSO.Presentacion
             this.btn2.TabIndex = 1;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
@@ -295,6 +254,7 @@ namespace ORUSCURSO.Presentacion
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn4
             // 
@@ -311,6 +271,7 @@ namespace ORUSCURSO.Presentacion
             this.btn4.TabIndex = 3;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btn5
             // 
@@ -327,6 +288,7 @@ namespace ORUSCURSO.Presentacion
             this.btn5.TabIndex = 4;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // btn6
             // 
@@ -343,6 +305,7 @@ namespace ORUSCURSO.Presentacion
             this.btn6.TabIndex = 5;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // btn7
             // 
@@ -359,6 +322,7 @@ namespace ORUSCURSO.Presentacion
             this.btn7.TabIndex = 6;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // btn8
             // 
@@ -375,6 +339,7 @@ namespace ORUSCURSO.Presentacion
             this.btn8.TabIndex = 7;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
             // btn9
             // 
@@ -391,15 +356,31 @@ namespace ORUSCURSO.Presentacion
             this.btn9.TabIndex = 8;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.txtcontraseña);
+            this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(0, 63);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(329, 50);
             this.panel6.TabIndex = 1;
+            // 
+            // txtcontraseña
+            // 
+            this.txtcontraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcontraseña.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtcontraseña.ForeColor = System.Drawing.Color.White;
+            this.txtcontraseña.Location = new System.Drawing.Point(25, 14);
+            this.txtcontraseña.Multiline = true;
+            this.txtcontraseña.Name = "txtcontraseña";
+            this.txtcontraseña.PasswordChar = '*';
+            this.txtcontraseña.Size = new System.Drawing.Size(278, 27);
+            this.txtcontraseña.TabIndex = 4;
+            this.txtcontraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcontraseña.TextChanged += new System.EventHandler(this.txtcontraseña_TextChanged);
             // 
             // panel7
             // 
@@ -408,15 +389,6 @@ namespace ORUSCURSO.Presentacion
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(278, 1);
             this.panel7.TabIndex = 16;
-            // 
-            // txtcontraseña
-            // 
-            this.txtcontraseña.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtcontraseña.Location = new System.Drawing.Point(25, 25);
-            this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(278, 23);
-            this.txtcontraseña.TabIndex = 0;
-            this.txtcontraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -462,19 +434,21 @@ namespace ORUSCURSO.Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1011, 687);
+            this.ClientSize = new System.Drawing.Size(1017, 687);
             this.Controls.Add(this.PanelUsuarios);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panelIngresoContraseña);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.panelIngresoContraseña.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.PanelUsuarios.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -484,14 +458,9 @@ namespace ORUSCURSO.Presentacion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button BtnIniciarSesion;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelIngresoContraseña;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label txtcontraseña;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnCambioUsuario;
@@ -512,5 +481,6 @@ namespace ORUSCURSO.Presentacion
         private System.Windows.Forms.Panel PanelUsuarios;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtcontraseña;
     }
 }

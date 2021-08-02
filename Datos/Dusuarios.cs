@@ -162,7 +162,7 @@ namespace ORUSCURSO.Datos
             {
                 int Iduser;
                 CONEXIONMAESTRA.abrir();
-                SqlCommand da = new SqlCommand("Select IdUsuario From Usuarios", CONEXIONMAESTRA.conectar);
+                SqlCommand da = new SqlCommand("select IdUsuario from Usuarios", CONEXIONMAESTRA.conectar);
                 Iduser = Convert.ToInt32(da.ExecuteScalar());
                 CONEXIONMAESTRA.cerrar();
                 Indicador = "Correcto";
@@ -172,7 +172,26 @@ namespace ORUSCURSO.Datos
                 Indicador = "Incorrecto";
             }
         }
-
+        public void validarUsuario(Lusuarios parametros, ref int id)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("validarUsuario", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Login", parametros.Login);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                id = 0;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
 
 
