@@ -2,9 +2,9 @@
 
 namespace ORUSCURSO.Presentacion.AsistenteInstalacion
 {
-    public partial class ConexionRemota : Form
+    public partial class usuarioPrincipal : Form
     {
-        public ConexionRemota()
+        public usuarioPrincipal()
         {
             InitializeComponent();
         }

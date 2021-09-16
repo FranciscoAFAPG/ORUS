@@ -1,13 +1,8 @@
 ﻿using ORUSCURSO.Datos;
 using ORUSCURSO.Logica;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ORUSCURSO.Presentacion
@@ -108,7 +103,7 @@ namespace ORUSCURSO.Presentacion
             if (Contador > 0)
             {
                 fechaReg = Convert.ToDateTime(dt.Rows[0]["Fecha_entrada"]);
-                 
+
             }
         }
         private void BuscarPersonalIdent()
@@ -116,12 +111,12 @@ namespace ORUSCURSO.Presentacion
             DataTable dt = new DataTable();
             Dpersonal funcion = new Dpersonal();
             funcion.buscarPersonalIdentidad(ref dt, txtIdentificacion.Text);
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 identificacion = dt.Rows[0]["Identificacion"].ToString();
-                Idpersonal = Convert.ToInt32( dt.Rows[0]["Id_personal"]);
+                Idpersonal = Convert.ToInt32(dt.Rows[0]["Id_personal"]);
                 txtNombre.Text = dt.Rows[0]["Nombres"].ToString();
-                
+
             }
         }
 

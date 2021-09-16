@@ -1,0 +1,33 @@
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\bin\Debug\ORUSCURSO.exe
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\bin\Debug\ORUSCURSO.pdb
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Properties.Resources.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.csproj.GenerateResource.cache
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.csproj.CoreCompileInputs.cache
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.exe
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.pdb
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.ConexionRemota.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.EleccionServidor.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.InstalacionBd.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.usuarioPrincipal.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.CtlUsuarios.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.Login.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.MenuPrincipal.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.Personal.resources
+C:\Users\Francisco\Desktop\probe\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.TomarAsistencias.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\bin\Debug\ORUSCURSO.exe
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\bin\Debug\ORUSCURSO.pdb
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.csproj.AssemblyReference.cache
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.ConexionRemota.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.EleccionServidor.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.InstalacionBd.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.AsistenteInstalacion.usuarioPrincipal.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.CtlUsuarios.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.Login.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.MenuPrincipal.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.Personal.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Presentacion.TomarAsistencias.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.Properties.Resources.resources
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.csproj.GenerateResource.cache
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.csproj.CoreCompileInputs.cache
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.exe
+C:\Users\Francisco\Desktop\Udemy\C# sql server\ORUSCURSO\obj\Debug\ORUSCURSO.pdb

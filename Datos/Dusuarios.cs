@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ORUSCURSO.Logica;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using ORUSCURSO.Logica;
 
 namespace ORUSCURSO.Datos
 {
@@ -41,7 +37,7 @@ namespace ORUSCURSO.Datos
                 SqlDataAdapter da = new SqlDataAdapter("select * from Usuarios", CONEXIONMAESTRA.conectar);
                 da.Fill(dt);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -60,7 +56,7 @@ namespace ORUSCURSO.Datos
                 cmd.Parameters.AddWithValue("@Login", Login);
                 Idusuario = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
             }
@@ -167,7 +163,7 @@ namespace ORUSCURSO.Datos
                 CONEXIONMAESTRA.cerrar();
                 Indicador = "Correcto";
             }
-            catch (Exception )
+            catch (Exception)
             {
                 Indicador = "Incorrecto";
             }
@@ -183,7 +179,7 @@ namespace ORUSCURSO.Datos
                 cmd.Parameters.AddWithValue("@Login", parametros.Login);
                 id = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 id = 0;
             }
@@ -192,8 +188,5 @@ namespace ORUSCURSO.Datos
                 CONEXIONMAESTRA.cerrar();
             }
         }
-
-
-
     }
 }

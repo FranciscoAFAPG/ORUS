@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ORUSCURSO.Logica;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using ORUSCURSO.Logica;
 using System.Windows.Forms;
 
 namespace ORUSCURSO.Datos
@@ -24,7 +20,8 @@ namespace ORUSCURSO.Datos
                 cmd.ExecuteNonQuery();
                 return true;
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -44,11 +41,12 @@ namespace ORUSCURSO.Datos
                 da.SelectCommand.Parameters.AddWithValue("@IdUsuaeio", parametros.IdUsuario);
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
             }
-            
+
         }
         public bool eliminarPermisos(Lpermisos parametros)
         {
@@ -61,7 +59,7 @@ namespace ORUSCURSO.Datos
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;

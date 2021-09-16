@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ORUSCURSO.Datos;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using ORUSCURSO.Datos;
 
 namespace ORUSCURSO.Logica
 {
@@ -151,8 +147,8 @@ namespace ORUSCURSO.Logica
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("select COUNT(Id_personal) from Personal",CONEXIONMAESTRA.conectar);
-                contador = Convert.ToInt32( cmd.ExecuteScalar());
+                SqlCommand cmd = new SqlCommand("select COUNT(Id_personal) from Personal", CONEXIONMAESTRA.conectar);
+                contador = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception)
             {

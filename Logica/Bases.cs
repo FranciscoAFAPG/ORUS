@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
 using System.Globalization;
-using ORUSCURSO.Presentacion;
+using System.Windows.Forms;
 
 namespace ORUSCURSO.Logica
 {
@@ -32,7 +27,7 @@ namespace ORUSCURSO.Logica
         }
         public static void DiseñoDtvEliminar(ref DataGridView Listado)
         {
-            foreach(DataGridViewRow row in Listado.Rows)
+            foreach (DataGridViewRow row in Listado.Rows)
             {
                 string estado;
                 estado = row.Cells["Estado"].Value.ToString();
@@ -47,7 +42,7 @@ namespace ORUSCURSO.Logica
         {
             if ((e.KeyChar == '.') || (e.KeyChar == ','))
             {
-                e.KeyChar = System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator[0];   
+                e.KeyChar = System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator[0];
             }
             if (char.IsDigit(e.KeyChar))
             {
@@ -57,7 +52,7 @@ namespace ORUSCURSO.Logica
             {
                 e.Handled = false;
             }
-            else if(e.KeyChar == '.' && (~CajaTexto.Text.IndexOf(".")) != 0)
+            else if (e.KeyChar == '.' && (~CajaTexto.Text.IndexOf(".")) != 0)
             {
                 e.Handled = true;
             }
@@ -75,7 +70,7 @@ namespace ORUSCURSO.Logica
             }
             return null;
         }
-       public enum DateInterval
+        public enum DateInterval
         {
             Day,
             DayOfYear,
@@ -103,7 +98,7 @@ namespace ORUSCURSO.Logica
                     TimeSpan spanForMinutes = datetwo - dateone;
                     return (long)spanForMinutes.TotalMinutes;
                 case DateInterval.Month:
-                    return ((datetwo.Year - dateone.Year) * 12) + (datetwo.Month-dateone.Month);
+                    return ((datetwo.Year - dateone.Year) * 12) + (datetwo.Month - dateone.Month);
                 case DateInterval.Quarter:
                     long dateOneQuarter = (long)Math.Ceiling(dateone.Month / 3.0);
                     long dateTwoQuarter = (long)Math.Ceiling(datetwo.Month / 3.0);

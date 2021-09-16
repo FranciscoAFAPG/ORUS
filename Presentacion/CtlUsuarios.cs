@@ -1,15 +1,10 @@
 ﻿using ORUSCURSO.Datos;
 using ORUSCURSO.Logica;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ORUSCURSO.Presentacion
 {
@@ -47,7 +42,7 @@ namespace ORUSCURSO.Presentacion
         {
             Dmodulos funcion = new Dmodulos();
             DataTable dt = new DataTable();
-            funcion.mostrar_modulos(ref  dt);
+            funcion.mostrar_modulos(ref dt);
             dataListadoModulos.DataSource = dt;
             dataListadoModulos.Columns[1].Visible = false;
         }
@@ -103,11 +98,11 @@ namespace ORUSCURSO.Presentacion
         }
         private void insertarPermisos()
         {
-            foreach(DataGridViewRow row in dataListadoModulos.Rows)
+            foreach (DataGridViewRow row in dataListadoModulos.Rows)
             {
                 int IdModulo = Convert.ToInt32(row.Cells["IdModulo"].Value);
                 bool marcado = Convert.ToBoolean(row.Cells["Marcar"].Value);
-                if(marcado == true)
+                if (marcado == true)
                 {
                     Lpermisos parametros = new Lpermisos();
                     Dpermisos funcion = new Dpermisos();

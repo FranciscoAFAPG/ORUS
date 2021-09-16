@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace ORUSCURSO
@@ -9,8 +6,9 @@ namespace ORUSCURSO
     static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Punto de entrada principal para la aplicación.
         /// </summary>
+
         [STAThread]
         static void Main()
         {
@@ -27,5 +25,6 @@ namespace ORUSCURSO
             Application.ExitThread();
             Application.Exit();
         }
+
     }
 }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ORUSCURSO.Datos;
+using ORUSCURSO.Logica;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ORUSCURSO.Logica;
-using ORUSCURSO.Datos;
 
 namespace ORUSCURSO.Presentacion
 {
@@ -18,9 +13,9 @@ namespace ORUSCURSO.Presentacion
         {
             InitializeComponent();
         }
-        int IdCargo=0;
-        int desde=1;
-        int hasta=10;
+        int IdCargo = 0;
+        int desde = 1;
+        int hasta = 10;
         int contador;
         int Idpersonal;
         private int items_por_pagina = 10;
@@ -119,7 +114,8 @@ namespace ORUSCURSO.Presentacion
         {
             if (!string.IsNullOrEmpty(txtCargoG.Text))
             {
-                if (!string.IsNullOrEmpty(txtSueldoG.Text)){
+                if (!string.IsNullOrEmpty(txtSueldoG.Text))
+                {
                     Lcargos parametros = new Lcargos();
                     Dcargos funcion = new Dcargos();
                     parametros.Cargo = txtCargoG.Text;
@@ -190,7 +186,7 @@ namespace ORUSCURSO.Presentacion
             {
                 ObtenerCargosEditar();
             }
-            if(e.ColumnIndex == dataListadoCargos.Columns["Cargo"].Index)
+            if (e.ColumnIndex == dataListadoCargos.Columns["Cargo"].Index)
             {
                 ObtenerDatosCargos();
             }
@@ -207,7 +203,7 @@ namespace ORUSCURSO.Presentacion
 
         private void ObtenerCargosEditar()
         {
-            IdCargo = Convert.ToInt32( dataListadoCargos.SelectedCells[1].Value);
+            IdCargo = Convert.ToInt32(dataListadoCargos.SelectedCells[1].Value);
             txtCargoG.Text = dataListadoCargos.SelectedCells[2].Value.ToString();
             txtSueldoG.Text = dataListadoCargos.SelectedCells[3].Value.ToString();
 
@@ -279,7 +275,7 @@ namespace ORUSCURSO.Presentacion
         }
         private void dataListadoPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == dataListadoPersonal.Columns["Eliminar"].Index)
+            if (e.ColumnIndex == dataListadoPersonal.Columns["Eliminar"].Index)
             {
                 DialogResult result = MessageBox.Show("Solo se cambiara el estado para que no pueda acceder, Desea Continuar?", "Eliminar registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
@@ -287,7 +283,7 @@ namespace ORUSCURSO.Presentacion
                     EliminarPersonal();
                 }
             }
-            if(e.ColumnIndex == dataListadoPersonal.Columns["Editar"].Index)
+            if (e.ColumnIndex == dataListadoPersonal.Columns["Editar"].Index)
             {
                 ObtenerDatos();
             }
@@ -323,7 +319,7 @@ namespace ORUSCURSO.Presentacion
         private void RestaurarPersonal()
         {
             DialogResult result = MessageBox.Show("Este personal se Elimino. ¿Desea Volver a Habilitarlo?", "Restauracion de registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 HabilitarPersonal();
             }
@@ -333,18 +329,18 @@ namespace ORUSCURSO.Presentacion
             Lpersonal parametros = new Lpersonal();
             Dpersonal funcion = new Dpersonal();
             parametros.Id_personal = Idpersonal;
-            if (funcion.restaurarPersonal(parametros)==true)
+            if (funcion.restaurarPersonal(parametros) == true)
             {
                 MostrarPersonal();
             }
         }
         private void EliminarPersonal()
         {
-            Idpersonal = Convert.ToInt32( dataListadoPersonal.SelectedCells[2].Value);
+            Idpersonal = Convert.ToInt32(dataListadoPersonal.SelectedCells[2].Value);
             Lpersonal parametros = new Lpersonal();
             Dpersonal funcion = new Dpersonal();
             parametros.Id_personal = Idpersonal;
-            if (funcion.eliminarPersonal(parametros)==true)
+            if (funcion.eliminarPersonal(parametros) == true)
             {
                 MostrarPersonal();
             }
@@ -390,7 +386,7 @@ namespace ORUSCURSO.Presentacion
             hasta += 10;
             MostrarPersonal();
             Contar();
-            if(contador > hasta)
+            if (contador > hasta)
             {
                 btn_sig.Visible = true;
                 btn_ant.Visible = true;
@@ -407,10 +403,10 @@ namespace ORUSCURSO.Presentacion
             try
             {
                 lbl_pagina.Text = (hasta / 10).ToString();
-                lbl_totalPaginas.Text = Math.Ceiling(Convert.ToSingle(contador)/items_por_pagina).ToString();
+                lbl_totalPaginas.Text = Math.Ceiling(Convert.ToSingle(contador) / items_por_pagina).ToString();
                 totalpaginas = Convert.ToInt32(lbl_totalPaginas.Text);
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -437,7 +433,7 @@ namespace ORUSCURSO.Presentacion
                 btn_sig.Visible = false;
                 btn_ant.Visible = true;
             }
-            if(desde == 1)
+            if (desde == 1)
             {
                 reiniciarPaginado();
             }
