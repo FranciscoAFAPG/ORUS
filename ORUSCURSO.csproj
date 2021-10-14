@@ -58,6 +58,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\Bases.cs" />
+    <Compile Include="Logica\Desencryptacion.cs" />
+    <Compile Include="Logica\Encryptacion.cs" />
     <Compile Include="Logica\Lasistencias.cs" />
     <Compile Include="Logica\Lcargos.cs" />
     <Compile Include="Logica\Lmodulos.cs" />

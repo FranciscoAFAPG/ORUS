@@ -1,11 +1,13 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace ORUSCURSO.Datos
 {
     public class CONEXIONMAESTRA
     {
-        public static string conexion = @"Data source=LAPTOP-9KU8UPLR\SQLEXPRESS; Initial Catalog=ORUS369; Integrated Security=true";
+        public static string conexion = Convert.ToString(Logica.Desencryptacion.checkServer());
+
         public static SqlConnection conectar = new SqlConnection(conexion);
         public static void abrir()
         {

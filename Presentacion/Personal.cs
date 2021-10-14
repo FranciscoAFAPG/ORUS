@@ -377,7 +377,6 @@ namespace ORUSCURSO.Presentacion
                 MostrarPersonal();
                 PanelRegistros.Visible = false;
             }
-
         }
 
         private void btn_sig_Click(object sender, EventArgs e)
